@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  before_action :set_kitten_url, only: [:kitten, :kittens] # this is the same as saying include the set_kitten_url in the methods named under only when run
+  before_action :set_kitten_url, only: [:kitten, :kittens] # What this code does is tell Rails that if it's going to run either kitten or kittens, it needs to run set_kitten_url first.
 
   def welcome
     @header = "This is the Welcome Page"
@@ -11,6 +11,8 @@ class PagesController < ApplicationController
 
   def contest
     @header = "This is our contest page"
+    flash[:notice] = "Sorry, the contest has ended"
+    redirect_to "/welcome"
   end
 
   def kitten
