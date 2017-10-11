@@ -1,11 +1,11 @@
 class PagesController < ApplicationController
 
-def welcome
+  def welcome
+  end
 
-end
+  def about
+  end
 
-def about
-
-end
-
+  def contest
+  end
 end
